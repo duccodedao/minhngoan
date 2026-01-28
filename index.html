@@ -1,25 +1,26 @@
 
+
 <!DOCTYPE html>
 <html lang="vi" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu app - Vĩnh Trạch Đông</title>
+    <title>Menu app - Lâm Minh Ngoãn</title>
     <link rel="icon" href="https://hdd.io.vn/img/bmassloadings.png" type="image/png">
     
     <!-- SEO & PWA Meta Tags -->
-    <meta name="description" content="Hub Portal tổng hợp các ứng dụng và danh bạ liên hệ của Vĩnh Trạch Đông.">
+    <meta name="description" content="Hub Portal tổng hợp các ứng dụng và danh bạ liên hệ của Lâm Minh Ngoãn.">
     <link rel="icon" href="https://hdd.io.vn/img/bmassloadings.png" type="image/png">
     <link rel="apple-touch-icon" href="https://hdd.io.vn/img/bmassloadings.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Hub Vĩnh Trạch Đông">
+    <meta name="apple-mobile-web-app-title" content="Hub Lâm Minh Ngoãn">
     <link rel="manifest" href="/js/applinkicon.json">
     <meta name="theme-color" content="#4f46e5">
 
     <!-- Social Media Meta -->
-    <meta property="og:title" content="Hub Portal - Vĩnh Trạch Đông">
-    <meta property="og:description" content="Hub Portal tổng hợp các ứng dụng và danh bạ liên hệ của Vĩnh Trạch Đông.">
+    <meta property="og:title" content="Hub Portal - Lâm Minh Ngoãn">
+    <meta property="og:description" content="Hub Portal tổng hợp các ứng dụng và danh bạ liên hệ của Lâm Minh Ngoãn.">
     <meta property="og:image" content="https://bmass.vercel.app/img/bmasslogo.png">
     <meta property="og:type" content="website">
     
@@ -768,15 +769,14 @@
         import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy, setDoc, getDoc, arrayUnion, arrayRemove, writeBatch, increment, runTransaction, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = {
-    apiKey: "AIzaSyAMHj1JzUSs8jpRUaSzuTtMoPJ1qTV1fcY",
-    authDomain: "minhngoan-d727c.firebaseapp.com",
-    projectId: "minhngoan-d727c",
-    storageBucket: "minhngoan-d727c.firebasestorage.app",
-    messagingSenderId: "124434240817",
-    appId: "1:124434240817:web:23762f01d70a7dc901cc10",
-    measurementId: "G-0YZD0JZRCN"
-  };
-
+            apiKey: "AIzaSyCLCcgaoW9gNYhKk0c0gDWC6i5mKVTN4XE",
+            authDomain: "profile-d1214.firebaseapp.com",
+            projectId: "profile-d1214",
+            storageBucket: "profile-d1214.firebasestorage.app",
+            messagingSenderId: "914980131889",
+            appId: "1:914980131889:web:72f8da15c42dbee671b110",
+            measurementId: "G-C587M69LZW"
+        };
         const LOGS_COLLECTION = "activityLogs"; 
         const NOTIFY_COLLECTION = "notifications"; 
         const USERS_COLLECTION = "users"; // NEW: For potential user listing
@@ -945,7 +945,7 @@
                 Notification.requestPermission().then(permission => {
                     if (permission === "granted") {
                         showToast("Đã cấp quyền thông báo thành công!", false);
-                        window.sendBrowserNotification('Hub Portal Vĩnh Trạch Đông', 'Thông báo trình duyệt đã được kích hoạt.');
+                        window.sendBrowserNotification('Hub Portal Lâm Minh Ngoãn', 'Thông báo trình duyệt đã được kích hoạt.');
                     } else {
                         showToast("Bạn đã từ chối cấp quyền thông báo.", true);
                     }
