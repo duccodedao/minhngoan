@@ -1,52 +1,66 @@
-
 <!DOCTYPE html>
-<html lang="vi" class="light"><head>
-    <!-- Basic -->
+<html lang="vi" class="light">
+<head>
+    <!-- =====================================================
+    BASIC
+    ====================================================== -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hub Portal Lâm Minh Ngoãn – Ứng dụng & Danh bạ liên hệ</title>
 
-    <!-- Primary SEO -->
-    <meta name="description" content="Hub Portal Lâm Minh Ngoãn – Tổng hợp ứng dụng, công cụ và danh bạ liên hệ, tối ưu cho mobile và PWA. Truy cập nhanh, tiện lợi, hiện đại.">
-    <meta name="keywords" content="Lâm Minh Ngoãn, Hub Portal, menu app, danh bạ liên hệ, ứng dụng nội bộ, PWA, portal cá nhân">
+    <!-- =====================================================
+    PRIMARY SEO
+    ====================================================== -->
+    <meta name="description" content="Hub Portal Lâm Minh Ngoãn – Tổng hợp ứng dụng, công cụ và danh bạ liên hệ. Truy cập nhanh, tối ưu mobile, hỗ trợ PWA.">
+    <meta name="keywords" content="Lâm Minh Ngoãn, hub portal, menu app, danh bạ liên hệ, ứng dụng nội bộ, PWA, portal cá nhân">
     <meta name="author" content="Lâm Minh Ngoãn">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://bmass.vercel.app/">
 
     <!-- Language -->
     <meta http-equiv="content-language" content="vi">
-    <link rel="alternate" href="https://bmass.vercel.app/" hreflang="vi-vn">
+    <link rel="alternate" hreflang="vi-vn" href="https://bmass.vercel.app/">
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://hdd.io.vn/img/bmassloadings.png" type="image/png">
+    <!-- =====================================================
+    FAVICON & ICON
+    ====================================================== -->
+    <link rel="icon" type="image/png" href="https://hdd.io.vn/img/bmassloadings.png">
     <link rel="apple-touch-icon" href="https://hdd.io.vn/img/bmassloadings.png">
 
-    <!-- PWA / Apple -->
+    <!-- =====================================================
+    PWA / APPLE
+    ====================================================== -->
+    <meta name="theme-color" content="#4f46e5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Hub Lâm Minh Ngoãn">
-    <meta name="theme-color" content="#4f46e5">
     <link rel="manifest" href="/js/applinkicon.json">
 
-    <!-- Open Graph (Facebook, Zalo, LinkedIn) -->
+    <!-- =====================================================
+    OPEN GRAPH (Facebook / Zalo / LinkedIn)
+    ====================================================== -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Hub Portal Lâm Minh Ngoãn">
     <meta property="og:description" content="Tổng hợp ứng dụng và danh bạ liên hệ của Lâm Minh Ngoãn – truy cập nhanh, tối ưu mobile.">
-    <meta property="og:type" content="website">
     <meta property="og:url" content="https://bmass.vercel.app/">
     <meta property="og:image" content="https://bmass.vercel.app/img/bmasslogo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
 
-    <!-- Twitter / X -->
+    <!-- =====================================================
+    TWITTER / X
+    ====================================================== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hub Portal Lâm Minh Ngoãn">
     <meta name="twitter:description" content="Hub Portal – Ứng dụng & danh bạ liên hệ Lâm Minh Ngoãn.">
     <meta name="twitter:image" content="https://bmass.vercel.app/img/bmasslogo.png">
 
-    <!-- Schema.org (Google Rich Results) -->
+    <!-- =====================================================
+    STRUCTURED DATA (SCHEMA.ORG)
+    ====================================================== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -62,113 +76,135 @@
     }
     </script>
 
+    <!-- =====================================================
+    TAILWIND CONFIG
+    ====================================================== -->
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: { extend: { colors: { primary: '#4f46e5', secondary: '#f43f5e', dark: '#020617' } } }
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#f43f5e',
+                        dark: '#020617'
+                    }
+                }
+            }
         }
     </script>
+
+    <!-- =====================================================
+    CUSTOM STYLE
+    ====================================================== -->
     <style>
-        /* SỬA LỖI: Sidebar dùng TRANSFORM để mượt hơn (Issue 5) */
-        .admin-sidebar { 
-            width: 28rem; /* Giữ width cố định */
-            min-width: 320px; 
-            transform: translateX(100%); /* Trượt ra ngoài */
+        /* Sidebar animation */
+        .admin-sidebar {
+            width: 28rem;
+            min-width: 320px;
+            transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
             overflow-x: hidden;
         }
-        .admin-sidebar.open {
-            transform: translateX(0); /* Trượt vào */
-        }
+        .admin-sidebar.open { transform: translateX(0); }
+
         @media (max-width: 768px) {
             .admin-sidebar { width: 100%; }
         }
-        
-        .mobile-category-sidebar { 
+
+        .mobile-category-sidebar {
             width: 75%;
             max-width: 300px;
-            transform: translateX(-100%); /* Trượt ra ngoài */
+            transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
             overflow-x: hidden;
         }
-        .mobile-category-sidebar.open {
-            transform: translateX(0);
+        .mobile-category-sidebar.open { transform: translateX(0); }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            transition: background 0.3s;
+            padding-bottom: 100px;
         }
-        /* END SỬA LỖI 5 */
-        
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; transition: background 0.3s; padding-bottom: 100px; } 
         .dark body { background-color: #020617; color: #e2e8f0; }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .dark .glass { background: rgba(15, 23, 42, 0.8); border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
         .app-item { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .drag-ghost { opacity: 0.3; background: #4f46e5 !important; border-radius: 1rem; }
-        .tab-active { color: #4f46e5; border-bottom: 2px solid #4f46e5; }
-        .dark .tab-active { color: #818cf8; border-bottom: 2px solid #818cf8; }
-        .app-item.selected-for-delete { box-shadow: 0 0 0 3px #f43f5e; border-radius: 1rem; }
-        
-        /* FIX: Header and Announcement Bar Position */
-        header { 
-            top: 0;
-            transition: top 0.3s; /* Smooth transition for header position */
+
+        .tab-active {
+            color: #4f46e5;
+            border-bottom: 2px solid #4f46e5;
         }
-        #announcement-bar:not(.hidden) ~ header { 
-            top: 32px; 
+        .dark .tab-active {
+            color: #818cf8;
+            border-bottom: 2px solid #818cf8;
         }
-        
-        /* Custom Marquee */
-        .marquee { overflow: hidden; white-space: nowrap; box-sizing: border-box; }
-        .marquee > div { display: inline-block; padding-left: 100%; animation: marquee 15s linear infinite; }
-        @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
-        
-        /* Custom Logo Loader - Zoom In/Out */
+
+        .app-item.selected-for-delete {
+            box-shadow: 0 0 0 3px #f43f5e;
+            border-radius: 1rem;
+        }
+
+        header { top: 0; transition: top 0.3s; }
+        #announcement-bar:not(.hidden) ~ header { top: 32px; }
+
+        .marquee { overflow: hidden; white-space: nowrap; }
+        .marquee > div {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
         .logo-loader {
             width: 24px;
             height: 24px;
-            animation: zoom-logo 1.5s ease-in-out infinite; /* Thay đổi animation */
+            animation: zoom-logo 1.5s ease-in-out infinite;
+        }
+        @keyframes zoom-logo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
-        @keyframes zoom-logo {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2); /* Phóng to */
-            }
-            100% {
-                transform: scale(1); /* Thu nhỏ lại */
-            }
-        }
-        
-        /* NEW: Mobile Footer Height & Padding Correction */
         @media (max-width: 768px) {
-            body { padding-bottom: 80px; } /* Footer height approx 60px + padding */
-            #main-content-wrapper { padding-bottom: 10px; } /* Reduce padding at the bottom of main content */
-            #category-bar { display: none !important; } /* Hide desktop category bar on mobile */
-            header { padding-right: 0; } /* Remove right padding on mobile */
-            /* REMOVED: .mobile-hidden { display: none !important; } to allow view toggle */
+            body { padding-bottom: 80px; }
+            #category-bar { display: none !important; }
+            header { padding-right: 0; }
         }
-        
-        /* NEW: Mobile-like Toast Styling & Transitions */
+
         #toast {
             bottom: 20px;
-            right: 50%;
             left: 50%;
-            transform: translate(-50%, 100%); /* Start position: bottom center, off-screen */
+            transform: translate(-50%, 100%);
             opacity: 0;
-            transition: all 0.4s ease-out; /* Smooth transition */
+            transition: all 0.4s ease-out;
             max-width: 90%;
-            width: auto;
             min-width: 250px;
-            pointer-events: none; /* Allows clicks through when hidden */
+            pointer-events: none;
         }
-        
         #toast.visible {
-            transform: translate(-50%, 0); /* End position: bottom center, on-screen */
+            transform: translate(-50%, 0);
             opacity: 1;
-            pointer-events: auto; /* Enables interaction when visible */
+            pointer-events: auto;
         }
     </style>
 </head>
+
 <body class="min-h-screen pb-24">
     
     <!-- NEW: Global Loading Overlay -->
